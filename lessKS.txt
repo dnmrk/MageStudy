@@ -1,0 +1,41 @@
+1. What is LESS quick summary
+https://lesscss.org/
+-basic knowledge, features, functions
+
+2. Magento css
+https://developer.adobe.com/commerce/frontend-core/guide/css/themes/
+
+3. COMPILE LESS WITH GRUNT
+- underscore filename
+
+
+4. INTRODUCTION LESS MIXIN
+<div class="progress-bar"></div>
+https://github.com/thewebverse/magento2-theme-ten/tree/main
+
+a. make ui element more dynamic using MIXINS
+b. make bg dynamic by adding variables / using MIXINS with parameters / make some other dynamic
+c. optional parameters / create global variables and assign default values / best practice
+d. organize the code by separating code blocks to a file (variables, lib, element) / make sure files communicate to each other
+e. can now create and understand ui element
+
+5. INTRODUCTION MAGENTO UI LIBRARY
+https://developer.adobe.com/commerce/frontend-core/guide/css/ui-library/
+
+a. build same concept as we build earlier
+b. change default button background 
+c. built-in documentation / possible configurations
+d. as a frontend developer
+- highlight ui elements of the design
+- if already built by the magento core / u have extend them and pass the right values
+- if there are new elements which are not in magento core / u have to create the using the coding standards of magento
+
+6. LESS CODING STANDARDS
+https://developer.adobe.com/commerce/php/coding-standards/less/
+
+7. CSS Specificity
+https://www.w3schools.com/css/css_specificity.asp
+
+8. BEM - http://getbem.com/naming/
+
+9. specific layout handler
