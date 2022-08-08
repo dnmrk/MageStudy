@@ -1,0 +1,35 @@
+<script type="text/x-magento-init">
+{
+    "*": {
+        "Magento_Ui/js/core/app": {
+            "components": {
+                "exampleUiComponent": {
+                    "component": "uiComponent",
+                    "template": "Mage2tv_Js/info-parent",
+                    "children": {
+                        "child1": {
+                            "component": "uiComponent",
+                            "template": "Mage2tv_Js/info",
+                            "children": {
+                                "child2": {
+                                    "component": "uiComponent",
+                                    "template": "Mage2tv_Js/info"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+</script>
+
+<div data-bind="scope: 'exampleUiComponent'">
+    <div data-bind="template: getTemplate()"></div>
+</div>
+
+<!-- require('uiRegistry').get('exampleUiComponent.child1.child2') -->
+<!-- require('uiRegistry').get('index = child2') -->
+<!-- require('uiRegistry').get('ns = exampleUiComponent, index = child1') -->
+<!-- require('uiRegistry').get(function(c){console.log(c.name);}) -->

@@ -1,0 +1,22 @@
+<div id="<%= data.id %>" data-escaped-values="<%- data.id %>" data-mage-init='{"collapsible": { "active": "true"}}'>
+    <div data-role="title">
+    <strong>This is collapsible content</strong></div>
+    <div data-role="content">
+        <%
+            // repeat items 
+            _.each(data.items,function(item,key,list) {
+            // create variables
+            var f = item.name.split("").shift().toLowerCase();
+        %>
+        <% if (item.name != '...') { %>
+        <div class="<%= f %>">
+            <span><%= key %></span>
+            <span><%- item.name %></span>
+            <span><%- item.interests %></span>
+        </div>
+        <% } %>
+        <%
+            });
+        %>
+    </div>
+</div>

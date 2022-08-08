@@ -1,0 +1,17 @@
+require('uiRegistry').get('minicart_content').get('foo')
+undefined
+
+require('uiRegistry').get('minicart_content').set('foo', 123)
+UiClass {_super: undefined, ignoreTmpls: {…}, _requested: {…}, containers: Array(0), exports: {…}, …}
+
+require('uiRegistry').get('minicart_content').get('foo')
+123
+
+require('uiRegistry').get('minicart_content').remove('foo')
+UiClass {_super: undefined, ignoreTmpls: {…}, _requested: {…}, containers: Array(0), exports: {…}, …}
+
+require('uiRegistry').get('minicart_content').get('foo')
+undefined
+
+AS MUCH AS POSSBILE DO NOT USE JQUERY, JQUERYUI + KNOCKOUT the same time
+

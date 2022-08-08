@@ -1,0 +1,200 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+
+/** @var \Dean\Override\ViewModel\PlayGround $viewModel */
+$viewModel = $block->getViewModel();
+
+$msg = $viewModel->getMessage();
+
+$images = [
+    'Dean_Override/images/1.png',
+    'Dean_Override/images/2.png',
+];
+
+$imageUrl = $block->getViewFileUrl($images[1]);
+
+//"animate": true
+//"animate": 200
+//"animate": {"duration": 600, "easing": "linear"}
+//getTemplate() or Dean_Override/ui-component-template
+?>
+
+<div data-bind="scope: 'my-component'">
+    <!-- ko template: 'Dean_Override/example' --><!-- /ko -->
+</div>
+
+<script type="text/x-magento-init">
+        {
+        "*": {
+            "Magento_Ui/js/core/app": {
+               "components": {
+                    "my-component": {
+                        "component": "Dean_Override/js/viewmodel",
+                        "imageUrl": "<?= $imageUrl ?>"
+                    }
+                }
+            }
+        }
+    }
+</script>
+
+
+<script type="text/x-magento-init">
+        {
+        "*": {
+            "Magento_Ui/js/core/app": {
+               "components": {
+                    "exampleUiComponent": {
+                        "component": "uiComponent",
+                        "template": "Dean_Override/ui-component-template-child",
+                        "children": {
+                            "child1": {
+                                "component": "uiComponent",
+                                "template": "Dean_Override/info",
+                                "children": {
+                                    "child2": {
+                                        "component": "uiComponent",
+                                        "template": "Dean_Override/info"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+</script>
+<div data-bind="scope: 'exampleUiComponent'">
+    <div data-bind="template: getTemplate()"></div>
+</div>
+
+<script type="text/x-magento-init">
+        {
+        "*": {
+            "Magento_Ui/js/core/app": {
+               "components": {
+                    "startSimple": {
+                        "component": "Dean_Override/js/plain-view-model",
+                        "base_url": "<?= $block->escapeJs($block->getBaseUrl()) ?>"
+                    }
+                }
+            }
+        }
+    }
+</script>
+<div data-bind="scope: 'startSimple'">
+
+    <h3 data-bind="text: label"></h3>
+    <table data-bind="foreach: items">
+        <tr>
+            <td data-bind="text: name"></td>
+            <td data-bind="text: qty"></td>
+            <td data-bind="text: price"></td>
+            <td data-bind="text: $parent.rowTotal($data)"></td>
+        </tr>
+    </table>
+    <div>Additional charge: <span data-bind="text: additional_charge"></span></div>
+    <strong>Total: <span data-bind="text: total()"></span></strong>
+    <hr />
+    <ul data-bind="foreach: values">
+        <li data-bind="text: $data"></li>
+    </ul>
+    <table>
+        <tr>
+            <th data-bind="i18n: 'Currency_to'"></th>
+            <th data-bind="i18n: 'Rate'"></th>
+        </tr>
+        <!-- ko foreach: exchange_rates -->
+        <tr>
+            <td data-bind="text: currency_to"></td>
+            <td data-bind="text: rate"></td>
+        </tr>
+        <!-- /ko -->
+    </table>
+    <h2 data-bind="text: title"></h2>
+    <pre data-bind="text: JSON.stringify(config, null, 2)"></pre>
+    <pre data-bind="text: output"></pre>
+</div>
+
+
+<div id="my-collapsible" data-mage-init='{"Dean_Override/js/dynamic-collapsible": {"ajaxContent": true}}'>
+    <div data-role="title">
+        <h2>How 'bout a collapsible widget? <button data-role="trigger">GO</button></h2>
+    </div>
+    <div id="content1" data-role="content"></div>
+    <a href="<?= $block->getViewFileUrl('Dean_Override/example-content.html')?>" data-ajax="true"></a>
+</div>
+
+<h2 id="testh2" xdata-mage-init='{"deanTitle": {}}'></h2>
+
+<script type="text/x-magento-init">{"#testh2": {"deanTitle": {}}}</script>
+
+<form data-mage-init='{"validation": {}}'>
+    <div class="control">
+        <input type="text" name="email" id="email" class="input-text"
+            placeholder="<?= __('Your Email'); ?>"
+            data-validate="{ required: true, 'validate-email': true}" />
+    </div>
+    <button type="submit" class="action primary"><?= __('Submit'); ?></button>
+</form>
+
+<div id="m2-component" data-bind="scope:'m2kocomponent'">
+    <!-- ko template: getTemplate() -->
+    <!-- /ko -->
+    <script type="text/x-magento-init">
+        {
+        "#m2-component": {
+            "Magento_Ui/js/core/app": {
+               "components": {
+                    "m2kocomponent": {
+                        "component": "Dean_Override/js/m2kocomponent",
+                        "template" : "Dean_Override/m2kocomponent-template"
+                    }
+                }
+            }
+        }
+    }
+    </script>
+</div>
+<hr>
+
+<div class="row">
+    <div class="col-m-6">
+        <div class="dashboard-item" data-bind="scope: 'componentOne'">
+            <div class="dashboard-item-title" data-bind="text:title"></div>
+            <div class="dashboard-item-title" data-bind="text:value"></div>
+            <div class="dashboard-item-content">
+                <p>Change value component: <input data-bind="value: value" /></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-m-6">
+        <div class="dashboard-item" data-bind="scope: 'componentTwo'">
+            <div class="dashboard-item-title" data-bind="text: title"></div>
+            <div class="dashboard-item-content">
+                <p>import from the first component: <strong data-bind="text: value"></strong></p>
+                <p>
+                    <input data-bind="value: value" />
+                    <input data-bind="value: value2" />
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/x-magento-init">
+    { "*" : {
+        "Magento_Ui/js/core/app" : {
+            "components" : {
+                "componentOne" : {
+                    "component" : "Dean_Override/js/component-one"
+                },
+                "componentTwo" : {
+                    "component" : "Dean_Override/js/component-two"
+                }
+            }
+        }
+    }
+}
+</script>

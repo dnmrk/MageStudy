@@ -1,0 +1,14 @@
+<div data-bind="template: 'TemplateUrl'"> or <div template="TemplateUrl">
+
+<input type="checkbox" data-bind="checked: isChecked:/> or <input type="checkbox" ko-checked="isChecked"/>
+
+<!-- ko if: isVisible --><!-- /ko --> or <if args="isVisible"></if> or <div data-bind="if: isVisible"></div> or <div if="isVisible"></div>
+
+<!-- ko ifnot: isVisible --><!-- /ko --> or <ifnot args="isVisible"></ifnot>
+
+vendor/magento/module-ui/view/base/web/templates/grid/sticky/sticky.html 
+<scope args="requestChild('listing_paging')" render="totalTmpl" />
+
+jQuery('body').trigger('contentUpdated'); or 
+mage/apply/main and call mage.apply();
+

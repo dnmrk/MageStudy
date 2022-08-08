@@ -1,0 +1,16 @@
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+    // CALL MIXIN IN CSS SELECTOR
+    .progress-bar {
+      .lib-progress-bar(
+          @_progress-bar-fill: #1979c3;
+          @_progress-bar-background: #f4f4f4;
+          @_progress-bar-width: 20%;
+      );
+    }
+
+}

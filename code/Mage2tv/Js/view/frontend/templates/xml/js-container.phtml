@@ -1,0 +1,21 @@
+<script type="text/x-magento-init">
+    {
+    "*": {
+        "Magento_Ui/js/core/app": <?= $block->getJsLayout() ?>
+    }
+}
+</script>
+
+<h2>XML</h2>
+
+<div data-bind="scope: 'component-a'">
+    <h3 data-bind="text: label"></h3>
+    <div data-bind="text: amount"></div>
+    <div data-bind="text: amountLink"></div>
+</div>
+<div data-bind="scope: 'component-b'">
+    <h3 data-bind="text: label"></h3>
+    <div data-bind="text: value"></div>
+    <div data-bind="text: amount"></div>
+    <div data-bind="text: valueLink"></div>
+</div>

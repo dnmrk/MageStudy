@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <script src="Mage2tv_Js::js/script-example.js" defer="true" async="true"/>
+    </head>
+    <referenceContainer name="content">
+        <block template="Mage2tv_Js::translate/js-container.phtml" name="mage2tv_js_block_ui_translate" />
+        
+        <!-- <block template="Mage2tv_Js::statemanage/js-container.phtml" name="mage2tv_js_block_ui_statemanage" /> -->
+
+        <!-- <block template="Mage2tv_Js::deps/js-container.phtml" name="mage2tv_js_block_ui_deps" /> -->
+
+        <!-- <block template="Mage2tv_Js::stateful/js-container.phtml" name="mage2tv_js_block_ui_stateful" /> -->
+
+        <!-- <block template="Mage2tv_Js::xml/js-container.phtml" name="mage2tv_js_block_ui_xml">
+            <arguments>
+                <argument name="jsLayout" xsi:type="array">
+                    <item name="components" xsi:type="array">
+                        <item name="component-a" xsi:type="array">
+                            <item name="component" xsi:type="string">Mage2tv_Js/js/import/ui-component-a</item>
+                            <item name="config" xsi:type="array">
+                                <item name="provider" xsi:type="string">component-b</item>
+                                <item name="propertyValue" xsi:type="string">amount</item>                                
+                            </item>
+                        </item>
+                        <item name="component-b" xsi:type="array">
+                            <item name="component" xsi:type="string">Mage2tv_Js/js/import/ui-component-b</item>                            
+                        </item>
+                    </item>
+                </argument>
+            </arguments>
+        </block> -->
+
+        <!-- <block template="Mage2tv_Js::imports/js-container.phtml" name="mage2tv_js_block_ui_imports" /> -->
+        <!-- <block template="Mage2tv_Js::ui-frontendv2.phtml" name="mage2tv_js_block_ui_frontendv2" /> -->
+        <!-- <block template="Mage2tv_Js::ui-frontend.phtml" name="mage2tv_js_block_ui_frontend" /> -->
+        <!-- <block template="Mage2tv_Js::ui-childrent.phtml" name="mage2tv_js_block_ui_children" /> -->
+
+        <!-- <block template="content.phtml" class="Mage2tv\Js\Block\Main" name="mage2tv_js_block_main"/> -->
+        <!-- <block template="Mage2tv_Js::js-container.phtml" name="mage2tv_js_block_js" /> -->
+        <!-- <block template="Mage2tv_Js::form.phtml" name="mage2tv_js_block_form" />         -->
+    </referenceContainer>
+</page>

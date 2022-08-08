@@ -1,0 +1,17 @@
+{
+    "name": "mage2tv/js",
+    "description": "",
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": [
+      "MIT"
+    ],
+    "autoload": {
+      "psr-4": {
+        "Mage2tv\\Js\\": ""
+      },
+      "files": [
+        "registration.php"
+      ]
+    }
+  }

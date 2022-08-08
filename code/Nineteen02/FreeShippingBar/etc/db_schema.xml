@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="sparsh_free_shipping_bar" resource="default" engine="innodb" comment="Sparsh Free Shipping Bar">        
+        <column xsi:type="varchar" name="achieved_bar_background_color" nullable="false" length="255" comment="Achieved Bar Background Color"/>
+        <column xsi:type="varchar" name="achieved_bar_text_color" nullable="false" length="255" comment="Achieved Bar Text Color"/>        
+    </table>
+</schema>

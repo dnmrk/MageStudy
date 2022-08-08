@@ -1,0 +1,25 @@
+<script type="text/x-magento-init">
+    {
+    "*": {
+        "Magento_Ui/js/core/app": {
+            "components": {
+                "root": {
+                    "component": "Mage2tv_Js/js/deps/root",
+                    "deps": ["root.sharedState"],
+                    "children": {
+                        "sharedState": {
+                            "component": "Mage2tv_Js/js/deps/shared-state"
+                        }
+                    }
+                }                
+            }
+        }
+    }
+}
+</script>
+<div data-bind="scope: 'root'">
+    <div>
+        The value is:
+        <span data-bind="text: value"></span>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<script type="text/x-magento-init">
+    {
+    "*": {
+        "Magento_Ui/js/core/app": {
+            "components": {
+                "stateful-example-component": {
+                    "component": "Mage2tv_Js/js/stateful/ui-component"                    
+                }
+            }
+        }
+    }
+}
+</script>
+<div data-bind="scope: 'stateful-example-component'">
+    <span>Your input:</span>
+    <input data-bind="textInput: input" autofocus />
+</div>

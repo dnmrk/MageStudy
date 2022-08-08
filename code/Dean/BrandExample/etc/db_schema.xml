@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="dean_brand_example" resource="default" engine="innodb" comment="dean schema Table" charset="utf8" collation="utf8_general_ci">
+        <column name="id" xsi:type="int" padding="11" unsigned="true" identity="true" comment="brand id" nullable="false" />
+        <column name="name" xsi:type="varchar" nullable="false" length="124" comment="brand name" />
+        <column name="description" xsi:type="text" nullable="true" comment="brand descriptions" />
+        <column name="is_enabled" xsi:type="boolean" nullable="false" default="0" comment="is the brand enabled" />
+        <column name="weighing_factor" xsi:type="decimal" precision="5" scale="4" default="1" unsigned="false" nullable="false" comment="search weighing factor" />
+
+        <column name="created_at" xsi:type="timestamp" default="CURRENT_TIMESTAMP" />
+        <column name="updated_at" xsi:type="timestamp" default="CURRENT_TIMESTAMP" on_update="true" nullable="true" />
+
+        <column xsi:type="smallint" name="website_id" padding="5" unsigned="true" nullable="false" identity="false" comment="Website ID" />
+
+        <constraint xsi:type="foreign" referenceId="DEAN_BRAND_EXAMPLE_WEBSITE_ID_STORE_WEBSITE_WEBSITE_ID" column="website_id" referenceTable="store_website" referenceColumn="website_id" onDelete="CASCADE" />
+
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id" />
+        </constraint>
+        <constraint xsi:type="unique" referenceId="DEAN_BRAND_EXAMPLE_NAME">
+            <column name="name" />
+        </constraint>
+    </table>
+</schema>

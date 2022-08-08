@@ -1,0 +1,20 @@
+<li id="test_step" data-bind="fadeVisible: isVisible">
+    <div class="step-title" data-bind="i18n: 'Test Step'" data-role="title"></div>
+    <div id="checkout-step-title" class="step-content" data-role="content">
+        <form data-bind="submit: navigateToNextStep" novalidate="novalidate">
+            <div>
+                <textarea class="input-text" rows="3" data-bind=" {value: textField} "></textarea>
+            </div>
+            <div class="actions-toolbar">
+                <div class="primary">
+                    <button data-role="opc-continue" type="submit" class="button action continue primary">
+                        <span>
+                            <!-- ko i18n: 'Next'-->
+                            <!-- /ko-->
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</li>

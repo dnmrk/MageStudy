@@ -1,0 +1,20 @@
+
+<script type="text/x-magento-init">
+{
+    "*": {
+        "Magento_Ui/js/core/app": {
+            "components": {
+                "myUiTranslate": {
+                    "component": "Mage2tv_Js/js/translate/ui-component",
+                    "template": "Mage2tv_Js/localized-template"
+                }
+            }
+        }
+    }
+}
+</script>
+<div data-bind="scope: 'myUiTranslate'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+
+<!-- when production mode need static -->

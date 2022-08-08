@@ -1,0 +1,8 @@
+{
+    "sparsh_free_shipping_bar": {
+        "column": {
+            "achieved_bar_background_color": true,
+            "achieved_bar_text_color": true
+        }
+    }
+}

@@ -1,0 +1,23 @@
+<script type="text/x-magento-init">
+    {
+    "*": {
+        "Magento_Ui/js/core/app": {
+            "components": {
+                "mutator": {
+                    "component": "Mage2tv_Js/js/statemanage/value-mutator",
+                    "template": "Mage2tv_Js/button",
+                    "children": {
+                        "display": {
+                            "component": "Mage2tv_Js/js/statemanage/value-display",
+                            "template": "Mage2tv_Js/display"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+</script>
+<div data-bind="scope: 'mutator'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>

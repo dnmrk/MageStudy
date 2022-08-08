@@ -1,0 +1,76 @@
+<script type="text/x-magento-init">
+{
+    "*": {
+        "Magento_Ui/js/core/app": {
+            "components": {
+                "exampleUiComponent": {
+                    "component": "Mage2tv_Js/js/ui-component",
+                    "label": "JSON label property",
+                    "config": {
+                        "label": "JSON config.label property"
+                    }
+                }
+            }
+        }
+    }
+}
+</script>
+
+<h3>UI Component</h3>
+<div data-bind="scope: 'exampleUiComponent'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+
+<hr>
+
+<script type="text/x-magento-init">
+{
+    "*": {
+        "Magento_Ui/js/core/app": {
+            "components": {
+                "startSimple": {
+                    "component": "Mage2tv_Js/js/plain-view-model",
+                    "base_url": "<?= $block->escapeJs($block->getBaseUrl())?>"
+                }
+            }
+        }
+    }
+}
+</script>
+<div data-bind="scope: 'startSimple'">
+    <h2 data-bind="text: title"></h2>
+    <pre data-bind="text: output"></pre>
+
+    <table>
+        <tr>
+            <th data-bind="i18n: 'Currency to'"></th>
+            <th data-bind="i18n: 'Rate'"></th>
+        </tr>
+        <!-- Virtual Element -->
+        <!-- ko foreach: exchange_rates -->
+            <tr>
+                <td data-bind="text: currency_to"></td>
+                <td data-bind="text: rate"></td>
+            </tr>
+        <!-- /ko -->
+    </table>
+
+    <table data-bind="foreach: exchange_rates_plain">
+        <tr>
+            <td data-bind="text: $data"></td>
+        </tr>
+    </table>
+
+    <h3 data-bind="text: v2.label"></h3>
+    <table data-bind="foreach: v2.items">
+        <tr>
+            <td data-bind="text: name"></td>
+            <td data-bind="text: qty"></td>
+            <td data-bind="text: price"></td>
+            <td data-bind="text: $parent.v2.rowTotal($data)"></td>
+        </tr>
+    </table>
+    <div>Additional charge: <span data-bind="text: v2.additional_charge"></span></div>
+    <strong>Total: <span data-bind="text: v2.total()"></span></strong>
+</div>
+
